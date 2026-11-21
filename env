@@ -37,7 +37,7 @@ if [ ! -f "${defconfig_file}" ]; then
   if [ -f "${configs_dir}/mt6768-unifiedk414_lineage_defconfig" ] && [ -f "${configs_dir}/m32_defconfig" ]; then
     echo "Generating M32 defconfig from modular MT6768 config..."
     cat "${configs_dir}/mt6768-unifiedk414_lineage_defconfig" "${configs_dir}/m32_defconfig" > "${defconfig_file}"
-  elif [ -f "${configs_dir}/m32_defconfig" ] && [ -f "${configs_dir}/m32.config" ]; then
+  elif [ -f "${configs_dir}/m32_defconfig" ] && [ -f "${configs_dir}/m32_defconfig" ]; then
     echo "Generating M32 defconfig from LumiROM base config..."
     cat "${configs_dir}/m32_defconfig" "${configs_dir}/m32_defconfig" > "${defconfig_file}"
   fi
