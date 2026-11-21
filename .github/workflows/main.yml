@@ -16,7 +16,7 @@ on: # [push]
       COMPILER:
         description: 'compilers used'
         required: true
-        default: 'AOSP-Clang-11'
+        default: 'Geopelia-Clang-21'
       KREPO:
         description: 'kernel repo'
         type: choice
@@ -36,7 +36,7 @@ on: # [push]
           - Stock
           - Battery
           - Performance
-        default: Stock
+        default: Battery
       NOTES:
         description: 'notes to print out'
         required: false
@@ -52,7 +52,7 @@ on: # [push]
       ZBRANCH:
         description: 'zipper branch'
         required: true
-        default: 'a325f'
+        default: 'm32'
       KSU:
         description: 'if dont want ksu then leave blank'
         type: choice
@@ -61,7 +61,7 @@ on: # [push]
           - both
           - baka
           - wsu
-        default: wsu
+        default: baka
       TG_RECIPENT:
         description: 'group id'
         required: false
@@ -136,11 +136,11 @@ jobs:
               bash tg_utils.sh msg "gh $RUN_NUM: cloning kernel source%nlgh $RUN_NUM: repo: $REPO%nlgh $RUN_NUM: branch: $KERNEL_BRANCH"
             fi
             git clone --depth=1 --single-branch $REPO -b $KERNEL_BRANCH kernel
-        - name: print kernel info
-          run: |
-            cd kernel
-            source ../env
-            bash ../tg_utils.sh msg "gh $RUN_NUM: kernel name: ${kernel_name}%nlgh $RUN_NUM: kernel ver: ${kernel_ver}%nlgh $RUN_NUM: kernel head commit: ${kernel_head}%nlgh $RUN_NUM: defconfig: ${defconfig}"
+        #- name: print kernel info
+         # run: |
+          #  cd kernel
+         #   source ../env
+        #    bash ../tg_utils.sh msg "gh $RUN_NUM: kernel name: ${kernel_name}%nlgh $RUN_NUM: kernel ver: ${kernel_ver}%nlgh $RUN_NUM: kernel head commit: ${kernel_head}%nlgh $RUN_NUM: defconfig: ${defconfig}"
         - name: run compilation scripts
           run: |
             cd kernel
