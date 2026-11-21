@@ -21,8 +21,8 @@ on: # [push]
         description: 'kernel repo'
         type: choice
         options:
-          - https://github.com/MrGadget84/white_kernel_samsung_mt6768_lumirom
-          - https://github.com/MrGadget84/white_kernel_samsung_mt6768_aosp
+          - https://github.com/Samo1408/white_kernel_samsung_mt6768_lumirom
+          - https://github.com/Samo1408/white_kernel_samsung_mt6768_aosp
       KBRANCH:
         description: 'kernel branch'
         type: choice
@@ -48,7 +48,7 @@ on: # [push]
       ZREPO:
         description: 'zipper repo'
         required: true
-        default: 'https://github.com/MrGadget84/AnyKernel3'
+        default: 'https://github.com/rsuntk/AnyKernel3'
       ZBRANCH:
         description: 'zipper branch'
         required: true
@@ -125,7 +125,7 @@ jobs:
         - name: clone kernel source
           run: |
             case "$REPO|$KERNEL_BRANCH" in
-              "https://github.com/MrGadget84/white_kernel_samsung_mt6768_lumirom|infinity"|"https://github.com/MrGadget84/white_kernel_samsung_mt6768_aosp|A16")
+              "https://github.com/Samo1408/white_kernel_samsung_mt6768_lumirom|infinity"|"https://github.com/Samo1408/white_kernel_samsung_mt6768_aosp|A16")
                 ;;
               *)
                 echo "Unsupported kernel repository/branch combination: $REPO ($KERNEL_BRANCH)" >&2
